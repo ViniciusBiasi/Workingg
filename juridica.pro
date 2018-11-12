@@ -16,8 +16,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     juridica.cpp \
-    Pessoa.cpp
+    Pessoa.cpp \
+    Produto.cpp
 
 HEADERS += \
     juridica.h \
-    Pessoa.h
+    Pessoa.h \
+    Produto.h

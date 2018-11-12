@@ -1,6 +1,6 @@
 #ifndef JURIDICA_H
 #define JURIDICA_H
-#include <QString>
+#include <string>
 #include <Pessoa.h>
 using namespace std;
 
