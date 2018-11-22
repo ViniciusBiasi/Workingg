@@ -13,17 +13,17 @@ private:
 public:
     Produto();
 
-    int getCODIGO() const;
-    void setCODIGO(int value);
+//    int getCODIGO() const;
+//    void setCODIGO(int value);
 
-    string getDescricao() const;
-    void setDescricao(const string &value);
+//    string getDescricao() const;
+//    void setDescricao(const string &value);
 
-    float getPreco() const;
-    void setPreco(float value);
+//    float getPreco() const;
+//    void setPreco(float value);
 
-    int getQuantidade() const;
-    void setQuantidade(int value);
+//    int getQuantidade() const;
+//    void setQuantidade(int value);
 
     void setCODIGO(int CODIGO){this->CODIGO=CODIGO;}
     void setDescricao(string Descricao){this->Descricao=Descricao;}
@@ -33,6 +33,7 @@ public:
 
     int getCODIGO(){return CODIGO;}
     string getDescricao(){return Descricao;}
+
     float getPreco(){return Preco;}
     int getQuantidade(){return Quantidade;}
 

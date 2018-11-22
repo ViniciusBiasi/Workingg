@@ -1,38 +1,40 @@
 #ifndef JURIDICA_H
 #define JURIDICA_H
-#include <string>
-#include <Pessoa.h>
+#include <sstream>
+#include "Pessoa.h"
 using namespace std;
 
-class juridica :public Pessoa
-{  
-private:  //protected
-    string CNPJ;
-    string Razao_Social;
-    string Nome_Contato;
-
+class Juridica: public Pessoa
+{
+protected:
+    string cnpj;
+    string razaoSocial;
+    string nomeContato;
 public:
-    juridica();
-    string Pessoa; //ostream
-    //{
-    string getCNPJ() const;
-    void setCNPJ(const string &value);
+    Juridica();
+    friend ostream& operator << (ostream& os, const Juridica& pessoa){
+        os  << "Dados: "
+            <<pessoa.CODIGO        <<", "
+            <<pessoa.cnpj           <<", "
+            <<pessoa.razaoSocial    <<", "
+            <<pessoa.nomeContato    <<", "
+            <<pessoa.nomeContato    <<", "
+            <<pessoa.logradouro     <<", "
+            <<pessoa.setor          <<", "
+            <<pessoa.cidade         <<", "
+            <<pessoa.estado         <<", "
+            <<pessoa.telefone       <<", "
+            <<pessoa.email          <<endl;
+        return os;
+    }
 
+    static bool setCnpj(string x);
+    void setRazaoSocial(string razaoSocial){this->razaoSocial=razaoSocial;}
+    void setNomeContato(string nomeContato){this->nomeContato=nomeContato;}
 
-    string getRazao_Social() const;
-    void setRazao_Social(const string &value);
-
-    string getNome_Contato() const;
-    void setNome_Contato(const string &value);
-    //}
-
-    void setCNPJ(string CNPJ);
-    void setRazao_Social(string Razao_Social);
-    void setNome_Contato(string Nome_Contato){this->Nome_Contato=Nome_Contato;}
-
-     string getCNPJ();
-     string getRazao_Social(){return Razao_Social;}
-     string getNome_Contato(){return Nome_Contato;}
+    string getCnpj(){return cnpj;}
+    string getRazaoSocial(){return razaoSocial;}
+    string getNomeContato(){return nomeContato;}
 
 };
 

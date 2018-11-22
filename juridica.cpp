@@ -1,36 +1,78 @@
 #include "juridica.h"
+#include <iostream>
+using namespace std;
 
+//Juridica::Juridica()
+//{
 
-juridica::juridica()
+//}
+bool Juridica::setCnpj(std::string x)
 {
+    unsigned int i,y,z;
 
-}
-string juridica::getRazao_Social() const
-{
-    return Razao_Social;
-}
+        if(x.length()!=14)
+        {
+            cout <<"\nTamanho invalido\n";
+            return false;
+        }
+        else
+        {
+            int vet[13]{6,5,4,3,2,9,8,7,6,5,4,3,2};
+            int aux[x.length()];
+            for(i=0;i!=x.length();i++)
+            {
+                std::string u=x.substr(i,1);
+                aux[i]=std::stoi(u);
+            }
+            int resmultip1=0;
 
-void juridica::setRazao_Social(const string &value)
-{
-    Razao_Social = value;
-}
+            z=1;
+            for(y=0;y<12;y++)
+            {
+                resmultip1=resmultip1+(aux[y]*vet[z]);
+                z++;
+            }
 
-string juridica::getNome_Contato() const
-{
-    return Nome_Contato;
-}
+            resmultip1=resmultip1%11;
 
-void juridica::setNome_Contato(const string &value)
-{
-    Nome_Contato = value;
-}
+            if(resmultip1<2)
+            {
+                resmultip1=0;
+            }
+            else
+            {
+                resmultip1=11-resmultip1;
+            }
 
-string juridica::getCNPJ() const
-{
-    return CNPJ;
-}
+            int resmultip2=0;
+            z=0;
+            for(int t=0;t<13;t++)
+            {
 
-void juridica::setCNPJ(const string &value)
-{
-    CNPJ = value;
+                resmultip2=resmultip2+(aux[t]*vet[z]);
+                z++;
+
+            }
+            resmultip2=resmultip2%11;
+
+            if(resmultip2<2)
+            {
+                resmultip2=0;
+            }
+            else
+            {
+                resmultip2=11-resmultip2;
+            }
+
+            if(resmultip1==aux[12]&&resmultip2==aux[13])
+            {
+                std::cout<<"\nvalido\n";
+                return true;
+            }
+            else
+            {
+                std::cout<<"\ninvalido\n";
+                return false;
+            }
+    }
 }
