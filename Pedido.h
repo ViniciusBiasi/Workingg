@@ -1,30 +1,35 @@
 #ifndef PEDIDO_H
 #define PEDIDO_H
-#include<QString>
+#include "Pessoa.h"
+#include "Item.h"
+#include <QString>
+#include <qdatetime.h>
+#include <QDate>
+#include <QDateTime>
 using namespace std;
 
-class Pedido
+class Pedido : Pessoa
 {
 private:
     int numero=0;
-    int idCliente=0;
-    string status=("");
-    string data=("");
+    Pessoa cliente;
+    std::string status; // entregue ou não entregue
+    QDate data;
     float valorTotal=0;
 
 public:
-    Pedido();
+    //Pedido();
 
-    void setNumero(int numero){this->numero=numero;}
-    void setCliente(int idCliente){this->idCliente=idCliente;}
-    void setStatus(string status){this->status=status;}
-    static bool setData(string x);
+    void setNumero(int numeroP){this->numero=numeroP;}
+    //void setCliente(int idCliente){this->cliente=idCliente;}
+    void setStatus(std::string status){this->status=status;}
+    void setdata(){data=QDate::currentDate(); }
     void setValorTotal(float valorTotal){this->valorTotal=valorTotal;}
 
     int getNumero(){return numero;}
-    int getCliente(){return idCliente;}
-    string getStatus(){return status;}
-    string getData()  {return data;}
+    Pessoa getCliente(){return cliente;}
+    std::string getStatus(){return status;}
+    std::string getdata();
     float getValorTotal(){return valorTotal;}
 };
 

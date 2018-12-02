@@ -5,7 +5,7 @@ using namespace std;
 
 class Pessoa
 {
-private:
+
 
 protected:
     int CODIGO;
@@ -20,7 +20,7 @@ protected:
     public:
         Pessoa();
 
-        virtual ~Pessoa(); //Métodos virtuais são métodos que são declaradas em uma classe base, mas serão implementadas nas classes que herdarão a classe base.
+       virtual ~Pessoa(); //Métodos virtuais são métodos que são declaradas em uma classe base, mas serão implementadas nas classes que herdarão a classe base.
 
         int  getCODIGO()                  {return CODIGO;}
         std::string getlogradouro()const  {return logradouro;}

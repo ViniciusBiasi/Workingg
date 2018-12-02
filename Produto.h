@@ -25,13 +25,13 @@ public:
 //    int getQuantidade() const;
 //    void setQuantidade(int value);
 
-    void setCODIGO(int CODIGO){this->CODIGO=CODIGO;}
+    void setCODIGOP(int CODIGOP){this->CODIGO=CODIGOP;}
     void setDescricao(string Descricao){this->Descricao=Descricao;}
 
     void setPreco(float Preco){this->Preco=Preco;}
     void setQuantidade(int Quantidade){this->Quantidade=Quantidade;}
 
-    int getCODIGO(){return CODIGO;}
+    int getCODIGOP(){return CODIGO;}
     string getDescricao(){return Descricao;}
 
     float getPreco(){return Preco;}

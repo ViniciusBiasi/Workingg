@@ -1,26 +1,26 @@
 #include "Fisica.h"
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 
-//Fisica::Fisica()
-//{
+Fisica::Fisica()
+{
 
-//}
+}
 
-bool Fisica::setCpf(std::string x)
+bool Fisica::validacpf(std::string cpf)
 {
     unsigned int i,d,z,y;
-    if(x.length()!=11)
+    if(cpf.length()!=11)
     {
         std::cout<<"\n tamanho invalido!\n";
         return false;
     }
     else
     {
-        int aux[x.length()];
-        for(i=0;i!=x.length();i++)
+        int aux[cpf.length()];
+        for(i=0;i!=cpf.length();i++)
         {
-            std::string u=x.substr(i,1);
+            std::string u=cpf.substr(i,1);
             aux[i]=std::stoi(u);
         }
         int resmultip1=0;

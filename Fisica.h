@@ -1,14 +1,17 @@
-#include "Pessoa.h"
-#include <sstream>
 #ifndef PESSOAFISICA_H_
 #define PESSOAFISICA_H_
-
+#include <Pessoa.h>
+#include <string>
+#include <iostream>
+#include <ostream>
+#include <QString>
+#include <sstream>
 using namespace std;
 
 class Fisica: public Pessoa
 {
 protected:
-    string cpf;
+    std::string cpf;
     string nome;
     string celular;
 
@@ -29,7 +32,8 @@ public:
                                 <<pessoa.email      <<endl;
                 return os;
     }
-    static bool setCpf(string);
+    static bool setCpf(std::string);
+    bool validacpf(std::string cpf);
     void setNome(string nome){this->nome=nome;}
     void setCelular(string celular){this->celular=celular;}
 

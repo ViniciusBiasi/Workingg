@@ -1,12 +1,12 @@
 #include "juridica.h"
-#include <iostream>
-using namespace std;
 
-//Juridica::Juridica()
-//{
 
-//}
-bool Juridica::setCnpj(std::string x)
+Juridica::Juridica()
+{
+
+}
+
+bool Juridica::setCnpj(string x)
 {
     unsigned int i,y,z;
 

@@ -2,6 +2,7 @@
 #define JURIDICA_H
 #include <sstream>
 #include "Pessoa.h"
+#include <iostream>
 using namespace std;
 
 class Juridica: public Pessoa

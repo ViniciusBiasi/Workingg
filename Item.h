@@ -1,24 +1,27 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include<QString>
+#include<list>
+#include "Produto.h"
 
 class Item
 {
 public:
     Item();
-    int getQuantidade() const;
-    void setQuantidade(int quantidadeP);
+    int getQuantidade() {return quantidade; }
+    void setQuantidade(int quantidadeP){quantidade=quantidadeP; }
 
-    float getPrecoUnitario() const;
-    void setPrecoUnitario(float precoUnitarioP);
+    float getPrecoUnitario() {return precoUnitario; }
+    void setPrecoUnitario(float precoUnitarioP) {precoUnitario=precoUnitarioP; }
 
-    float getValorTotal() const;
-    void setValorTotal(float valorTotalP);
+    float getValorTotal() {return valorTotal;}
+    void setValorTotal(float valorTotalP){valorTotal=valorTotalP; }
 
 private:
     int quantidade;
     float precoUnitario;
     float valorTotal;
+    Produto obj;
 
 };
 
